@@ -39,7 +39,7 @@ public class AdminController {
         return "redirect:/admin";
     }
 
-    @RequestMapping("/updateUser/{id}")
+    @PostMapping("/updateUser/{id}")
     public String updateUser(@PathVariable("id") Long id,
                              @ModelAttribute("user") User user,
                              @RequestParam("listRoles") List<String> values){
@@ -48,7 +48,7 @@ public class AdminController {
         return "redirect:/admin";
     }
 
-    @RequestMapping("/deleteUser/{id}")
+    @PostMapping("/deleteUser/{id}")
     public String deleteUserById(@PathVariable Long id){
         userService.deleteUserById(id);
         return "redirect:/admin";
